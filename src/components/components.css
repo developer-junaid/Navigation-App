@@ -1,0 +1,21 @@
+.drawer {
+  display: flex;
+  height: 100%;
+  width: 320px;
+  background-color: #7367f0;
+  color: white;
+  text-align: left;
+}
+
+.drawer-list ul {
+  font-size: 30px;
+}
+
+.drawer-list li {
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+.drawer-icons {
+  font-size: 100px;
+}
