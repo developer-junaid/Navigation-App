@@ -20,25 +20,21 @@ import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import List from "@material-ui/core/List";
-import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
-import ReceiptIcon from '@material-ui/icons/Receipt';
-import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
-import SettingsIcon from '@material-ui/icons/Settings';
-import LocalAtmIcon from '@material-ui/icons/LocalAtm';
-import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
-import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import ReceiptIcon from "@material-ui/icons/Receipt";
+import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
+import SettingsIcon from "@material-ui/icons/Settings";
+import LocalAtmIcon from "@material-ui/icons/LocalAtm";
+import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
+import EventAvailableIcon from "@material-ui/icons/EventAvailable";
+import MegaMenu from "./MegaMenu";
 
+// Material UI Styles
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
-  menuButton: {
-  },
+  menuButton: {},
   title: {
     display: "none",
     [theme.breakpoints.up("sm")]: {
@@ -96,9 +92,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Component Function
 const NavBar = () => {
-  // MY Code
+  // MY CODE
+
+  // Full screen logic
   const [fullscreen, setFullScreen] = useState(false);
+  const handle = useFullScreenHandle();
 
   const enterFullScreen = () => {
     setFullScreen(true);
@@ -110,15 +110,18 @@ const NavBar = () => {
     handle.exit();
   };
 
+  // Drawer Logic
   const [open, setOpen] = useState(false);
 
   const handleDrawer = () => {
     setOpen(!open);
+    setMenu(false);
   };
 
-  const handle = useFullScreenHandle();
+  // Mega Menu Logic
+  const [menu, setMenu] = useState(false);
 
-  // MUI STYLES
+  // MUI CODE
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -242,14 +245,14 @@ const NavBar = () => {
                   <FullscreenExitIcon />
                 </IconButton>
               ) : (
-                  <IconButton
-                    aria-label="fullscreen"
-                    onClick={() => enterFullScreen()}
-                    color="inherit"
-                  >
-                    <FullscreenIcon />
-                  </IconButton>
-                )}
+                <IconButton
+                  aria-label="fullscreen"
+                  onClick={() => enterFullScreen()}
+                  color="inherit"
+                >
+                  <FullscreenIcon />
+                </IconButton>
+              )}
 
               <IconButton
                 aria-label="show 17 new notifications"
@@ -297,8 +300,8 @@ const NavBar = () => {
         {/* Drawer */}
         <Drawer anchor="left" open={open}>
           <IconButton
+            backgroundColor="purple"
             edge="start"
-            className={classes.menuButton}
             color="inherit"
             onClick={handleDrawer}
             aria-label="open drawer"
@@ -317,36 +320,36 @@ const NavBar = () => {
           <div className="drawer">
             <div className="drawer-list">
               <ul>
-                <li><LocalAtmIcon /> Master Data</li>
-                <li><MonetizationOnIcon /> Transaction</li>
-                <li><AccountBalanceIcon /> Cash management</li>
-                <li><EventAvailableIcon /> Settlement</li>
-                <li><AccountBalanceWalletIcon /> Accounting</li>
-                <li><ReceiptIcon /> Reporting</li>
-                <li><SettingsIcon /> System Settings</li>
-
+                <li onClick={() => setMenu(!menu)}>
+                  <LocalAtmIcon /> &nbsp; Master Data
+                </li>
+                <li>
+                  <MonetizationOnIcon />
+                  &nbsp; Transaction
+                </li>
+                <li>
+                  <AccountBalanceIcon /> &nbsp;Cash management
+                </li>
+                <li>
+                  <EventAvailableIcon />
+                  &nbsp; Settlement
+                </li>
+                <li>
+                  <AccountBalanceWalletIcon /> &nbsp;Accounting
+                </li>
+                <li>
+                  <ReceiptIcon />
+                  &nbsp; Reporting
+                </li>
+                <li>
+                  <SettingsIcon /> &nbsp;System Settings
+                </li>
               </ul>
             </div>
-            {/* <List>  
-
-              <ListItem button>
-                <ListItemIcon >
-                  <InboxIcon htmlColor="white" />
-                </ListItemIcon>
-                <ListItemText primary="Master Data" />
-              </ListItem>
-
-              <ListItem button>
-                <ListItemIcon >
-                  <InboxIcon htmlColor="white" />
-                </ListItemIcon>
-                <ListItemText primary="Master Data" />
-              </ListItem>
-
-            </List> */}
           </div>
         </Drawer>
       </div>
+      <div>{menu ? <MegaMenu /> : <span></span>}</div>
     </FullScreen>
   );
 };

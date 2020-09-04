@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./components/NavBar";
-import Both from "./components/Both";
 
+import "./App.css";
 const App = () => {
   return (
     <div className="App">
