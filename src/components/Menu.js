@@ -24,56 +24,76 @@ const MyMenu = () => {
         theme="light"
         triggerSubMenuAction="click"
       >
+        {/* Transaction */}
+        <Menu.Item>
+          <MonetizationOnIcon />
+          &nbsp;&nbsp;&nbsp;Transaction
+        </Menu.Item>
+
+        {/* Cash Management */}
+        <Menu.Item>
+          <AccountBalanceIcon />
+          &nbsp;&nbsp;&nbsp;Cash management
+        </Menu.Item>
+
+        {/* Settlement */}
+
+        <Menu.Item>
+          <EventAvailableIcon />
+          &nbsp;&nbsp;&nbsp;Settlement
+        </Menu.Item>
+
+        {/* Accounting */}
+
+        <Menu.Item>
+          <AccountBalanceWalletIcon />
+          &nbsp;&nbsp;&nbsp;Accounting
+        </Menu.Item>
+
+        {/* Reporting */}
+        <Menu.Item>
+          <ReceiptIcon />
+          &nbsp;&nbsp;&nbsp;Reporting
+        </Menu.Item>
+
+        {/* Master Data */}
         <SubMenu icon={<LocalAtmIcon />} title="&nbsp;&nbsp;&nbsp;Master Data">
-          <Menu.Item>Option 3</Menu.Item>
-          <Menu.Item>Option 4</Menu.Item>
-          <SubMenu title="Submenu">
-            <Menu.Item>Option 5</Menu.Item>
-            <Menu.Item>Option 6</Menu.Item>
+          <SubMenu title="General">
+            <Menu.Item>User</Menu.Item>
+          </SubMenu>
+          <SubMenu title="Currency">
+            <Menu.Item>Currencies</Menu.Item>
+            <Menu.Item>Currency Conversion</Menu.Item>
+            <Menu.Item>Bank Clearing Code</Menu.Item>
+          </SubMenu>
+          <SubMenu title="Location">
+            <Menu.Item>Location</Menu.Item>
+            <Menu.Item>Holiday Schedule</Menu.Item>
+          </SubMenu>
+          <SubMenu title="Company">
+            <Menu.Item>Legal Entity</Menu.Item>
+            <Menu.Item>Company</Menu.Item>
+            <Menu.Item>Company Bank Account</Menu.Item>
+            <Menu.Item>Company Account Type</Menu.Item>
+          </SubMenu>
+          <SubMenu title="Counterparty">
+            <Menu.Item>Financial Institution</Menu.Item>
+            <Menu.Item>CounterParty</Menu.Item>
+            <Menu.Item>CounterParty Contact</Menu.Item>
+            <Menu.Item>CounterParty Bank Account</Menu.Item>
+          </SubMenu>
+          <SubMenu title="User Defined Data">
+            <Menu.Item>Portfolio</Menu.Item>
+            <Menu.Item>Group</Menu.Item>
+            <Menu.Item>User Defined Fields</Menu.Item>
           </SubMenu>
         </SubMenu>
 
-        <SubMenu
-          icon={<MonetizationOnIcon />}
-          title="&nbsp;&nbsp;&nbsp;Transaction"
-        >
-          <Menu.Item>Option 7</Menu.Item>
-          <Menu.Item>Option 8</Menu.Item>
-          <Menu.Item>Option 9</Menu.Item>
-          <Menu.Item>Option 10</Menu.Item>
-        </SubMenu>
-
-        <SubMenu
-          icon={<MonetizationOnIcon />}
-          title="&nbsp;&nbsp;&nbsp;Cash management"
-        >
-          <Menu.Item>Option 7</Menu.Item>
-        </SubMenu>
-
-        <SubMenu
-          icon={<EventAvailableIcon />}
-          title="&nbsp;&nbsp;&nbsp;Settlement"
-        >
-          <Menu.Item>Option 10</Menu.Item>
-        </SubMenu>
-
-        <SubMenu
-          icon={<AccountBalanceWalletIcon />}
-          title="&nbsp;&nbsp;&nbsp;Accounting"
-        >
-          <Menu.Item>Option 10</Menu.Item>
-        </SubMenu>
-
-        <SubMenu icon={<ReceiptIcon />} title="&nbsp;&nbsp;&nbsp;Reporting">
-          <Menu.Item>Option 10</Menu.Item>
-        </SubMenu>
-
-        <SubMenu
-          icon={<SettingsIcon />}
-          title="&nbsp;&nbsp;&nbsp;System Settings"
-        >
-          <Menu.Item>Option 10</Menu.Item>
-        </SubMenu>
+        {/* System Settings */}
+        <Menu.Item>
+          <SettingsIcon />
+          &nbsp;&nbsp;&nbsp;System Settings
+        </Menu.Item>
       </Menu>
     </>
   );
