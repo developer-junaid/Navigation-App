@@ -32,6 +32,7 @@ import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 
 const drawerWidth = 240;
+const IconDrawerWidth = 70;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,6 +48,14 @@ const useStyles = makeStyles((theme) => ({
   appBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(["width", "margin"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  IconBarShift: {
+    marginLeft: IconDrawerWidth,
+    width: `calc(100% - ${IconDrawerWidth}px)`,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -160,6 +169,7 @@ export default function Navigation() {
   const handleDrawer = () => {
     setOpenDrawer(!openDrawer);
     setShiftBar(!shiftBar);
+    setPin(false);
     {
       openDrawer ? setOpen(true) : setOpen(false);
     }
@@ -206,6 +216,7 @@ export default function Navigation() {
           position="fixed"
           className={clsx(classes.appBar, {
             [classes.appBarShift]: shiftBar,
+            [classes.IconBarShift]: pin,
           })}
         >
           <Toolbar>
