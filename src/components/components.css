@@ -86,3 +86,11 @@
     height: auto;
   }
 }
+
+/* Right float components app bar */
+.floatRight {
+  float: right !important;
+  position: absolute;
+  top: 7px;
+  right: 20px;
+}
