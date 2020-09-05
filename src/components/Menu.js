@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Menu } from "antd";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -8,10 +8,15 @@ import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import ReceiptIcon from "@material-ui/icons/Receipt";
 import "./components.css";
+import { pinContext } from './Context';
 
 const { SubMenu } = Menu;
 
 const MyMenu = () => {
+
+  // Use Pincontext
+  const { pin } = useContext(pinContext);
+
   return (
     <>
       <br />
@@ -56,7 +61,7 @@ const MyMenu = () => {
 
         {/* Master Data */}
         <SubMenu
-          popupClassName="popup"
+          popupClassName={pin ? 'pinned-menu' : 'unpinned-menu'}
           className="menu-items"
           icon={<LocalAtmIcon fontSize="large" />}
           title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Master Data"

@@ -1,12 +1,14 @@
 import React from "react";
 import Navigation from "./components/Navigation";
 import "./App.css";
-
+import { PinProvider } from "./components/Context";
 
 const App = () => {
   return (
     <div className="App">
-      <Navigation/>
+      <PinProvider>
+        <Navigation />
+      </PinProvider>
     </div>
   );
 };

@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import clsx from "clsx";
 import { makeStyles, fade } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
+import { Menu } from "antd";
+import { pinContext } from "./Context";
 import IconButton from "@material-ui/core/IconButton";
 import MyMenu from "./Menu";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -21,8 +22,9 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
 import "./components.css";
-const drawerWidth = 270;
+const drawerWidth = 301;
 const IconDrawerWidth = 70;
+const { SubMenu } = Menu;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -154,8 +156,9 @@ export default function Navigation() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const [open, setOpen] = useState(false);
   const [shiftBar, setShiftBar] = useState(false);
-  const [pin, setPin] = useState(false);
 
+  // Use Pincontext
+  const { pin, setPin } = useContext(pinContext);
   const handleDrawer = () => {
     setOpenDrawer(!openDrawer);
     setShiftBar(!shiftBar);
@@ -262,16 +265,19 @@ export default function Navigation() {
                 >
                   <NotificationsIcon />
                 </IconButton>
-                <IconButton
-                  edge="end"
-                  aria-label="account of current user"
-                  aria-controls={menuId}
-                  aria-haspopup="true"
-                  onClick={handleProfileMenuOpen}
-                  color="inherit"
+                {/* Accounts profile menu */}
+                {/* <Menu
+                  style={{ width: 30 }}
+                  mode="inline"
+                  theme="light"
+                  triggerSubMenuAction="click"
                 >
-                  <AccountCircle />
-                </IconButton>
+                  <SubMenu title="General">
+                    <Menu.Item>
+                      <AccountCircle />
+                    </Menu.Item>
+                  </SubMenu>
+                </Menu> */}
                 <IconButton
                   edge="end"
                   aria-label="account of current user"

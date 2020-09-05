@@ -119,6 +119,10 @@
   margin-top: 20px !important;
 }
 
-.popup {
-  left: 270px !important;
+.unpinned-menu {
+  left: 302px !important;
+}
+
+.pinned-menu {
+  left: 70px !important;
 }
