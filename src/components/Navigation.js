@@ -22,6 +22,8 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
 import "./components.css";
+import Popover from "@material-ui/core/Popover";
+
 const drawerWidth = 301;
 const IconDrawerWidth = 70;
 const { SubMenu } = Menu;
@@ -152,6 +154,9 @@ export default function Navigation() {
     handle.exit();
   };
 
+  // Popper Logic
+  const [openPopper, setPopper] = useState(false);
+
   // Drawer Logic
   const [openDrawer, setOpenDrawer] = useState(false);
   const [open, setOpen] = useState(false);
@@ -265,19 +270,34 @@ export default function Navigation() {
                 >
                   <NotificationsIcon />
                 </IconButton>
+
                 {/* Accounts profile menu */}
-                {/* <Menu
-                  style={{ width: 30 }}
-                  mode="inline"
-                  theme="light"
-                  triggerSubMenuAction="click"
+                <IconButton
+                  onClick={() => {
+                    setPopper(true);
+                  }}
+                  aria-label="Account info"
+                  color="inherit"
                 >
-                  <SubMenu title="General">
-                    <Menu.Item>
-                      <AccountCircle />
-                    </Menu.Item>
-                  </SubMenu>
-                </Menu> */}
+                  <AccountCircle />
+                </IconButton>
+                <Popover
+                  open={openPopper}
+                  onClose={() => setPopper(false)}
+                  anchorReference="anchorPosition"
+                  anchorPosition={{ top: 70, left: 1500 }}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                >
+                  <h3> The content of the Popover.</h3>
+                </Popover>
+
                 <IconButton
                   edge="end"
                   aria-label="account of current user"
