@@ -21,7 +21,7 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
 import "./components.css";
-const drawerWidth = 240;
+const drawerWidth = 270;
 const IconDrawerWidth = 70;
 
 const useStyles = makeStyles((theme) => ({
@@ -317,58 +317,7 @@ export default function Navigation() {
             </div>
             <div className="Links">
               <Divider />
-
               <MyMenu />
-              {/* <List>
-                <ListItem button>
-                  <ListItemIcon>
-                    <LocalAtmIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Master Data"} />
-                </ListItem>
-
-                <ListItem button>
-                  <ListItemIcon>
-                    <MonetizationOnIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Transaction"} />
-                </ListItem>
-
-                <ListItem button>
-                  <ListItemIcon>
-                    <AccountBalanceIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Cash management"} />
-                </ListItem>
-
-                <ListItem button>
-                  <ListItemIcon>
-                    <EventAvailableIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Settlement"} />
-                </ListItem>
-
-                <ListItem button>
-                  <ListItemIcon>
-                    <AccountBalanceWalletIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Accounting"} />
-                </ListItem>
-
-                <ListItem button>
-                  <ListItemIcon>
-                    <ReceiptIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"Reporting"} />
-                </ListItem>
-
-                <ListItem button>
-                  <ListItemIcon>
-                    <SettingsIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={"System Settings"} />
-                </ListItem>
-              </List> */}
             </div>
           </Drawer>
         ) : (

@@ -1,16 +1,14 @@
 import React from "react";
 import { Menu } from "antd";
-import { AppstoreOutlined, SettingOutlined } from "@ant-design/icons";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 import SettingsIcon from "@material-ui/icons/Settings";
 import LocalAtmIcon from "@material-ui/icons/LocalAtm";
 import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import ReceiptIcon from "@material-ui/icons/Receipt";
+import "./components.css";
+
 const { SubMenu } = Menu;
 
 const MyMenu = () => {
@@ -19,45 +17,50 @@ const MyMenu = () => {
       <br />
       <br />
       <Menu
-        style={{ width: 240 }}
+        style={{ width: 300 }}
         mode="vertical"
         theme="light"
         triggerSubMenuAction="click"
       >
         {/* Transaction */}
-        <Menu.Item>
-          <MonetizationOnIcon />
-          &nbsp;&nbsp;&nbsp;Transaction
+        <Menu.Item className="menu-items">
+          <MonetizationOnIcon fontSize="large" />
+          &nbsp;&nbsp;&nbsp;&nbsp; Transaction
         </Menu.Item>
 
         {/* Cash Management */}
-        <Menu.Item>
-          <AccountBalanceIcon />
-          &nbsp;&nbsp;&nbsp;Cash management
+        <Menu.Item className="menu-items">
+          <AccountBalanceIcon fontSize="large" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cash management
         </Menu.Item>
 
         {/* Settlement */}
 
-        <Menu.Item>
-          <EventAvailableIcon />
-          &nbsp;&nbsp;&nbsp;Settlement
+        <Menu.Item className="menu-items">
+          <EventAvailableIcon fontSize="large" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Settlement
         </Menu.Item>
 
         {/* Accounting */}
 
-        <Menu.Item>
-          <AccountBalanceWalletIcon />
-          &nbsp;&nbsp;&nbsp;Accounting
+        <Menu.Item className="menu-items">
+          <AccountBalanceWalletIcon fontSize="large" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accounting
         </Menu.Item>
 
         {/* Reporting */}
-        <Menu.Item>
-          <ReceiptIcon />
-          &nbsp;&nbsp;&nbsp;Reporting
+        <Menu.Item className="menu-items">
+          <ReceiptIcon fontSize="large" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reporting
         </Menu.Item>
 
         {/* Master Data */}
-        <SubMenu icon={<LocalAtmIcon />} title="&nbsp;&nbsp;&nbsp;Master Data">
+        <SubMenu
+          popupClassName="popup"
+          className="menu-items"
+          icon={<LocalAtmIcon fontSize="large" />}
+          title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Master Data"
+        >
           <SubMenu title="General">
             <Menu.Item>User</Menu.Item>
           </SubMenu>
@@ -90,9 +93,9 @@ const MyMenu = () => {
         </SubMenu>
 
         {/* System Settings */}
-        <Menu.Item>
-          <SettingsIcon />
-          &nbsp;&nbsp;&nbsp;System Settings
+        <Menu.Item className="menu-items">
+          <SettingsIcon fontSize="large" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System Settings
         </Menu.Item>
       </Menu>
     </>
