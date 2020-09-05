@@ -11,6 +11,7 @@
     "primeicons": "^4.0.0",
     "primereact": "^5.0.0-rc.1",
     "react": "^16.13.1",
+    "react-data-menu": "^1.1.2",
     "react-dom": "^16.13.1",
     "react-full-screen": "^0.3.1",
     "react-native-popup-menu": "^0.15.9",

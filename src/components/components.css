@@ -33,6 +33,20 @@
   font-size: 100px;
 }
 
+.pin-btn {
+  position: absolute !important;
+  top: 0 !important;
+}
+
+.drawer-btn {
+  position: absolute !important;
+  top: 30px !important;
+}
+
+.Links{
+  margin-top: 20px !important;
+}
+
 /* Mega Menu Styles */
 
 .dropdown-content {
