@@ -347,9 +347,10 @@ const NavBar = () => {
               </ul>
             </div>
           </div>
+          {/* <div>{menu ? <MegaMenu /> : <span></span>}</div> */}
+
         </Drawer>
       </div>
-      <div>{menu ? <MegaMenu /> : <span></span>}</div>
     </FullScreen>
   );
 };
