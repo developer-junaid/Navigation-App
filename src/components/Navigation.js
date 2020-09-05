@@ -295,7 +295,11 @@ export default function Navigation() {
                     horizontal: "left",
                   }}
                 >
-                  <h3> The content of the Popover.</h3>
+                  <div className="account-popper">
+                    <h4>User Settings</h4>
+                    <br />
+                    <h4>Logout</h4>
+                  </div>
                 </Popover>
 
                 <IconButton

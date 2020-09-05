@@ -126,3 +126,23 @@
 .pinned-menu {
   left: 70px !important;
 }
+
+/* Accout Profile Popper */
+.account-popper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  padding: 10px;
+}
+
+.account-popper h4 {
+  cursor: pointer;
+}
+
+.account-popper h4:hover {
+  color: #1890ff;
+
+}
