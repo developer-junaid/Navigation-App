@@ -8,10 +8,8 @@ import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
+import MyMenu from "./Menu";
 import MenuIcon from "@material-ui/icons/Menu";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -22,15 +20,7 @@ import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import RadioButtonCheckedIcon from "@material-ui/icons/RadioButtonChecked";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
-import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
-import ReceiptIcon from "@material-ui/icons/Receipt";
 import "./components.css";
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
-import SettingsIcon from "@material-ui/icons/Settings";
-import LocalAtmIcon from "@material-ui/icons/LocalAtm";
-import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
-import EventAvailableIcon from "@material-ui/icons/EventAvailable";
-
 const drawerWidth = 240;
 const IconDrawerWidth = 70;
 
@@ -328,7 +318,8 @@ export default function Navigation() {
             <div className="Links">
               <Divider />
 
-              <List>
+              <MyMenu />
+              {/* <List>
                 <ListItem button>
                   <ListItemIcon>
                     <LocalAtmIcon />
@@ -377,7 +368,7 @@ export default function Navigation() {
                   </ListItemIcon>
                   <ListItemText primary={"System Settings"} />
                 </ListItem>
-              </List>
+              </List> */}
             </div>
           </Drawer>
         ) : (
