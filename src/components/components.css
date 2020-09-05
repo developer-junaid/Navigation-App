@@ -35,15 +35,15 @@
 
 .pin-btn {
   position: absolute !important;
-  top: 0 !important;
+  top: 30px !important;
 }
 
 .drawer-btn {
   position: absolute !important;
-  top: 30px !important;
+  top: 0 !important;
 }
 
-.Links{
+.Links {
   margin-top: 20px !important;
 }
 
