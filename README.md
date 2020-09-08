@@ -4,7 +4,7 @@
 
 
 # HOMEPAGE
-<img src='/images/navbar.png'/>
+<img src='/images/navapp.png'/>
 
 
 http://test-navigation-app.surge.sh/
