@@ -128,6 +128,13 @@
 }
 
 /* Accout Profile Popper */
+
+.popper-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .account-popper {
   display: flex;
   flex-direction: column;
@@ -144,5 +151,5 @@
 
 .account-popper h4:hover {
   color: #1890ff;
-
 }
+

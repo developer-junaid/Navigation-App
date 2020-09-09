@@ -208,7 +208,7 @@ export default function Navigation() {
 
   return (
     <FullScreen handle={handle}>
-      <div className={classes.grow}>
+      <div className="container">
         <CssBaseline />
         <AppBar
           position="fixed"
@@ -283,6 +283,7 @@ export default function Navigation() {
                 </IconButton>
                 <Popover
                   open={openPopper}
+                  classes={"popper-box"}
                   onClose={() => setPopper(false)}
                   anchorReference="anchorPosition"
                   anchorPosition={{ top: 70, left: 1500 }}
